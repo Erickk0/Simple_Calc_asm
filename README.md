@@ -19,7 +19,7 @@ This project is a simple calculator implemented in x86_64 assembly using NASM. T
 
 To install NASM on macOS, you can use [Homebrew](https://brew.sh/):
 
-```bash
+bash
 brew install nasm
 
 Usage
