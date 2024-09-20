@@ -1,80 +1,73 @@
-Simple Calculator in Assembly (NASM) for macOS
+# Simple Calculator in Assembly (NASM) for macOS
 
-This project is a simple calculator implemented in x86_64 assembly using NASM. The calculator allows users to input two numbers and select an arithmetic operation (+ or -). It performs the calculation and outputs the result.
-Features
+This project is a simple calculator implemented in x86_64 assembly using NASM. The calculator accepts two numbers and an operation (`+` or `-`), performs the calculation, and outputs the result. It works on macOS and uses system calls for input/output.
 
-    Input: Two numbers and a basic arithmetic operation (+ or -).
-    Output: Displays the result of the operation.
-    Error Handling: Detects and responds to invalid operations.
+## Features
 
-Requirements
+- Input: Two numbers and an arithmetic operation (`+` for addition or `-` for subtraction).
+- Output: Displays the result of the arithmetic operation.
+- Handles basic error-checking for invalid operations.
 
-    macOS (64-bit)
-    NASM (Netwide Assembler)
-    x86_64 architecture
-    Linker (ld)
+## Requirements
 
-Installation
+- macOS (64-bit)
+- NASM (Netwide Assembler)
+- x86_64 architecture
+- Linker (`ld`) for macOS
 
-    Install NASM via Homebrew:
+## Installation
+
+To install NASM on macOS, you can use [Homebrew](https://brew.sh/):
+
+bash
+brew install nasm
+
+Usage
+
+    Clone the repository or download the calculator.asm file to your local machine.
+
+    Open your terminal and navigate to the directory where calculator.asm is located.
+
+    Assemble the program using NASM:
 
     bash
 
-brew install nasm
-
-Clone the Repository or download calculator.asm:
-
-bash
-
-git clone <repository-url>
-cd <repository-directory>
-
-Assemble the Program:
-
-bash
-
 nasm -f macho64 -o calculator.o calculator.asm
 
-Link the Object File to create the executable:
+Link the object file to create an executable:
 
 bash
 
 ld -macos_version_min 10.7 -o calculator calculator.o -lSystem
 
-Run the Program:
+Run the program:
 
 bash
 
     ./calculator
 
-    Follow Prompts to enter two numbers and choose an operation (+ or -).
+    Follow the on-screen prompts to enter two numbers and an operation (+ or -).
 
-Usage
+    The result of the operation will be displayed.
 
-After running the program, follow the on-screen prompts to input the first number, the second number, and the desired operation. The program will output the result or display an error message if an invalid operation is selected.
 Example
 
-bash
+Here’s an example interaction with the calculator:
+
+sql
 
 Enter first number: 7
 Enter second number: 5
 Choose operation (+ or -): -
 Result: 2
 
-If an invalid operation is entered:
+If you enter an invalid operation (any character other than + or -), the program will display an error message:
 
-bash
+mathematica
 
 Enter first number: 4
 Enter second number: 3
 Choose operation (+ or -): *
 Invalid operation!
 
-Notes
-
-    The program currently supports only integer addition and subtraction.
-    Ensure NASM is installed correctly, and the commands are executed in a 64-bit macOS environment.
-
-License
-
-This project is licensed under the MIT License.
+This simple interaction shows how the program handles valid input for basic arithmetic and manages invalid operations.
